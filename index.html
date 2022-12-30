@@ -3,22 +3,129 @@
 <Html>   
 <Head> 
 <Title>   
-  Demo
+  Demo page
 </Title>
+
+ <style>
+    a { color: #FFA07A; } /* CSS link color */
+  </style>
 </Head>
-<Body background="img.png"> 
- <br>
- <br>
-sdddfd  <br>
-fgbgfbfg <br>
+<body style="background-color:#00008B;">
+
+<h1 style="font-family:  Comic Sans MS; color:#FFFF00"> Welcome to my simple demo github page</h1>
+
+<h2  style="font-family: Comic Sans MS ;color:#FFFF00" >
+My name is Quoc and i am a software developer. I have experience with .NET and Java. <br>
+Frontend and backend. I love to work with .NET and Java. I will show you some 
+demo project in .NET and Java 
+<br><br>
+My job is a software developer, i am a busy man, therefor i only have time to make a simple
+demo github page, when i have free time, i will continue to update my github page ...
+<br><br>
+Now i will show you some demo project <br><br>
+The first project is about OpenID Connect and OAuth 2.0<br>
+In this ASP.NET Core application, I will use OAuth2 and OpenID Connect to secure 
+Web Application and Web API. I will use IdentityServer4. <br><br>
+The first screenshot 1 show a login page, User can authenticate with local 
+account or with social media accounts like Google, Microsoft, Facebook, and other.
+</h2>
+<br>
+<br>
+<img src="login.png"   width="950" height="550" />
+<br>
+<h2  style="font-family: Comic Sans MS ;color:#FFFF00" >
+screenshot 1 
+<br>
+<br>
+Use can select local or social media accounts to login<br><br>
+<img src="ms.png"   width="950" height="550" /> <br>
+screenshot 2 <br><br>
+
+<img src="google.png"   width="950" height="550" /> <br>
+screenshot 3<br><br>
+
+After succesful login, the use will see the welcome page 
+<br>
+<br>
+<img src="welcomepage.png"   width="950" height="550" /> <br>
+screenshot 4
+<br><br>
+Now let me show you interesting thing about secure web API
+<br>
+This peace of code will do the magic work for us
+<br><br>
+public void ConfigureServices(IServiceCollection services) 
+{
+<br>
+            services.AddAuthentication("Bearer")
+            .AddIdentityServerAuthentication("Bearer", options =><br>
+            { <br>
+                options.ApiName = "secretApi";<br>
+                options.Authority = "https://localhost:44343";<br>
+            });<br>
+
+            services.AddAuthorization(options =><br>
+            {<br>
+                options.AddPolicy("secretApiScope", policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+                    policy.RequireClaim("scope", "secretApi.read");<br>
+                });<br>
+            });<br><br>
+This code will allow only access token with right scope Claim to access web API
+<br>
+You can see the complete code for this demo application in my github repo link below<br>
+
+link <br>
+
+<a href="https://github.com/Nguyen105/dotnetdemo">https://github.com/Nguyen105/dotnetdemo</a>
+
+<br>
 <br>
 
- <img src="login.png"   width="850" height="450"  />
-	 
-  <br>
-  <br>
+The second demo project is about react frontend.<br><br>
+This react frontend let users select 
+books list from database. Users can update book title,
+book description, and delete book from database.
+<br>
+Some screenshot will show you how the react frontend look like, <br>
+the nice thing about frontend react is that you can choose to connect to many different type database, <br>
+SQL server, PostgreSql, mySQL, etc ...
+<br><br>
+<img src="book.png"   width="950" height="550" /> <br>
+screenshot 5
+<br>
+<br>
+<img src="selectbook.png"   width="950" height="550" /> <br>
+screenshot 6
+<br>
+<br>
+<img src="dung.png"   width="950" height="550" /> <br>
+screenshot 7
+<br>
+<br>
+And you can choose many different framework as backend, .Net or Java or Node.js, etc 
+<br>
+You can see the code for this react frontend in my github repo link
+<br>
+link<br>
+
+<a href="https://github.com/Nguyen105/frontend-react">https://github.com/Nguyen105/frontend-react</a>
+<br>
+<br>
+That is for now, i will publish more demo project soon when i have time
+<br>
+<br>
+Until then, best regards
+<br>
+Software developer Quoc 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</h2>
    
-  
-fgbfgbfgbgfbfgbfgbfg gfbfgb fgbffgb 
 </Body>
 </Html>
